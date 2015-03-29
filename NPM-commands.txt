@@ -2,4 +2,6 @@ npm init
 npm install -g express (global)
 npm install express -- save (local)
 npm install ejs --save
+npm install -g express-generator
+express -e project_name
 
