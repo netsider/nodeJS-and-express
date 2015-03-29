@@ -1,7 +1,24 @@
 var express = require('express');
 var app = express();
+
+app.set('view engine', 'ejs');
+//app.get('/', function(req, res) {
+//	res.send('Hello Express');
+//});
+//app.get('/', function(req, res) {
+//	res.render('default');
+//});
+// app.get('/', function(req, res) {
+	// res.render('default', {title: 'Russ'});
+// });
 app.get('/', function(req, res) {
-	res.send('Hello Express');
+	res.render('default', {
+		title: 'Russ',
+		users: ['Russell', 'Damien', 'Melissa']
+		});
+});
+app.get('/', function(req, res) {
+	res.render('default', {title: 'Russ'});
 });
 app.get('/russ', function(req, res) {
 	res.send('Hello Express');

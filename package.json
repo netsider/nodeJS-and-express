@@ -16,6 +16,7 @@
   },
   "homepage": "https://github.com/netsider/nodeJS-and-express",
   "dependencies": {
+    "ejs": "^2.3.1",
     "express": "^4.12.3"
   },
   "devDependencies": {}
