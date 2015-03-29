@@ -2,6 +2,8 @@ var port = 3000;
 var express = require('express');
 var app = express();
 
+app.locals.titleofthewebsite = "Website TITLE" // Adds variable to anything rendering the template
+
 app.set('view engine', 'ejs');
 //app.get('/', function(req, res) {
 //	res.send('Hello Express');
