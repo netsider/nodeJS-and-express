@@ -3,5 +3,17 @@ npm install -g express (global)
 npm install express -- save (local)
 npm install ejs --save
 npm install -g express-generator
+npm start
+
+Express Generator:
 express -e project_name
+cd project_name
+npm install
+
+
+Equal sign means you want the EJS template to print out a variable.
+
+After loading data:
+ - Pass through routes to templates
+ - Or, attach it to app.locals
 
