@@ -6,7 +6,7 @@ var port = 3000;
 var appdata = require('./data.json');
 app.locals.titleofthewebsite = 'Website TITLE';
 app.set('view engine', 'ejs');
-app.use('/', routes); // use the routes file specified above for the root dir/node (?)
+app.use('/', routes); // use the routes file/path specified above for the root dir/node (?)
 app.get('*', function(req, res) { // if URL/route !exist
 	res.send('Bad route');
 	//console.log("Bad Route: " + util.inspect(req, {showHidden: false, depth: null}));
