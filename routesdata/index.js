@@ -28,9 +28,10 @@ router.get('/', function(req, res) {
 		});
 });
 router.get('/russ', function(req, res) {
-	res.send('Hello Russ');
+	/* // res.send('Hello Russ'); */
+	res.send("The views directory is " + req.app.get("views"));
 });
 router.get('/ru*s', function(req, res) { // Matches "russssssss"
   res.send('Hello Russ!!!');
 });
-module.exports = router;  // Makes router available to other script? (module.exports)
+module.exports = router;  // Makes router available to other script? (.use?)
