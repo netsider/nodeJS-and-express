@@ -11,4 +11,5 @@ app.get('*', function(req, res) {
 });
 app.listen(port, function() {
 	console.log('Listening on Port ' + port);
+	console.log('Mountpath: ' + app.mountpath);
 });
