@@ -1,3 +1,5 @@
+NPM/EXPRESS/NODEJS NOTES
+
 npm init
 npm install -g express (global)
 npm install express -- save (local)
@@ -16,4 +18,7 @@ Equal sign means you want the EJS template to print out a variable.
 After loading data:
  - Pass through routes to templates
  - Or, attach it to app.locals
+
+
+If loaded into app.locals, the objects in the data file will become global variables in app.locals 
 

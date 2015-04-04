@@ -1,0 +1,7 @@
+<% counter = 1 %>
+<article class="class nextmeeting">
+<h1>I will next be available at: <%= appdata.meeting.date %></h1>
+<% appdata.social.forEach(function(item) { %>
+	<%= '(' + counter++ + ') ' + item.shortname %><br/>
+<% }); %>
+</article>
