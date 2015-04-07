@@ -1,3 +1,4 @@
+// other half: ./routesdata/index.js
 var express = require('express');
 var routes = require('./routesdata'); // Point it to routes folder
 var util = require('util');

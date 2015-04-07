@@ -1,3 +1,4 @@
+// other half: ./routes/index.js
 var express = require('express');
 var routes = require('./routes'); // Point it to routes folder
 var port = 3000;

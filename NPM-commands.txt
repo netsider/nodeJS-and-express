@@ -22,3 +22,12 @@ After loading data:
 
 If loaded into app.locals, the objects in the data file will become global variables in app.locals 
 
+Watch out for HTML in .json files!  Use "-" instead of "=" in EJS tags.
+
+Heroku is a cloud based service where you can run NodeJS scripts.  See "Getting and Setting up a Heroku app"
+
+NodeJS for Front End Developers
+Learning Node
+NodeJS in Action (Manning Publications)
+
+

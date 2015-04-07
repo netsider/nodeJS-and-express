@@ -27,11 +27,14 @@ router.get('/', function(req, res) {
 		users: Names
 		});
 });
-router.get('/russ', function(req, res) {
-	/* // res.send('Hello Russ'); */
-	res.send("The views directory is " + req.app.get("views"));
-});
-router.get('/ru*s', function(req, res) { // Matches "russssssss"
-  res.send('Hello Russ!!!');
+// router.get('/russ', function(req, res) {
+	// /* // res.send('Hello Russ'); */
+	// res.send("The views directory is " + req.app.get("views"));
+// });
+// router.get('/ru*s', function(req, res) { // Matches "russssssss"
+  // res.send('Hello Russ!!!');
+// });
+router.get('/russ/:russid', function(req, res) { // How to pass string to the page
+	 res.send(req.params.russid);
 });
 module.exports = router;  // Makes router available to other script? (.use?)
