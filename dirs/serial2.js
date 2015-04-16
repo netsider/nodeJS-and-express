@@ -7,7 +7,6 @@ var results = [];
 var DIR = 'C:/xampp/htdocs';
 var SEP = ':';
 var printToScreen = false;
-// var printToScreen = true;
 var currmd5;
 var hashObject = {};
 var walk = function(dir, done) {
@@ -21,7 +20,7 @@ var walk = function(dir, done) {
 			file = dir + '/' + file;
 			fs.stat(file, function(err, stat) {
 				if (stat && stat.isDirectory()) { // If item is a directory
-				if(printToScreen){
+				if(printToScreen){ // Toggle on/off "!" to print to screen
 					process.stdout.write(count + '.' + filename + '\r'); //  print and number each directory
 					count++;
 				}
@@ -33,7 +32,7 @@ var walk = function(dir, done) {
         } else { // if item is a file
 			results.push(file);
 			fileNames.push(filename);
-			if(!printToScreen){
+			if(!printToScreen){ // Toggle on/off "!" to print to screen
 				hashObject[count] = {};
 				var currmd5 = md5(file);
 				hashObject[count].name = filename;
