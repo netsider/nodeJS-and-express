@@ -7,8 +7,9 @@ var results = [];
 var DIR = 'C:/xampp/htdocs';
 var SEP = ':';
 var printToScreen = false;
-var currmd5;
 // var printToScreen = true;
+var currmd5;
+var hashObject = {};
 var walk = function(dir, done) {
 	fs.readdir(dir, function(err, list) {
 		if (err) return done(err);
@@ -21,12 +22,7 @@ var walk = function(dir, done) {
 			fs.stat(file, function(err, stat) {
 				if (stat && stat.isDirectory()) { // If item is a directory
 				if(printToScreen){
-					fs.readFile(file, function(err, buf) {
-						currmd5 = md5(buf);
-						//console.log(currmd5);
-						if(err){ console.log(err) };
-					});
-					process.stdout.write(count + '.' + filename + ' (MD5: ' + currmd5 + ') ' + '\r'); //  print and number each directory
+					process.stdout.write(count + '.' + filename + '\r'); //  print and number each file
 					count++;
 				}
 				Dirs.push(filename);
@@ -38,10 +34,10 @@ var walk = function(dir, done) {
 			results.push(file);
 			fileNames.push(filename);
 			if(!printToScreen){
-			var currmd5 = md5(file);
-						fs.readFile(file, function(err, buf) {
-						//console.log(currmd5);
-						});
+				hashObject[count] = {};
+				var currmd5 = md5(file);
+				hashObject[count].name = filename;
+				hashObject[count].hash = currmd5;
 				//process.stdout.write(count + '.' + filename + '\r'); //  print and number each file
 				process.stdout.write(count + '.' + filename + ' (MD5: ' + currmd5 + ') ' + '\r'); //  print and number each directory
 				count++;
@@ -61,6 +57,7 @@ var doneFunction = function(err, list){
 	if(list){
 		console.log('Number of files in ' + DIR + SEP + ' ' + fileNames.length);
 		console.log('Number of directories in ' + DIR + SEP + ' ' + Dirs.length);
+		console.log(JSON.stringify(hashObject));
 	}
 };
 walk(DIR, doneFunction);
