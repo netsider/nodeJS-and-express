@@ -22,7 +22,7 @@ var walk = function(dir, done) {
 			fs.stat(file, function(err, stat) {
 				if (stat && stat.isDirectory()) { // If item is a directory
 				if(printToScreen){
-					process.stdout.write(count + '.' + filename + '\r'); //  print and number each file
+					process.stdout.write(count + '.' + filename + '\r'); //  print and number each directory
 					count++;
 				}
 				Dirs.push(filename);
@@ -39,7 +39,7 @@ var walk = function(dir, done) {
 				hashObject[count].name = filename;
 				hashObject[count].hash = currmd5;
 				//process.stdout.write(count + '.' + filename + '\r'); //  print and number each file
-				process.stdout.write(count + '.' + filename + ' (MD5: ' + currmd5 + ') ' + '\r'); //  print and number each directory
+				process.stdout.write(count + '.' + filename + ' (MD5: ' + currmd5 + ') ' + '\r'); //  print and number each file
 				count++;
 			}
 			next();
