@@ -7,7 +7,6 @@ var results = [];
 var DIR = 'C:/xampp/htdocs';
 var SEP = ':';
 var printToScreen = false;
-var currmd5;
 var hashObject = {};
 var walk = function(dir, done) {
 	fs.readdir(dir, function(err, list) {
@@ -36,6 +35,7 @@ var walk = function(dir, done) {
 			var currmd5 = md5(file);
 			hashObject[count].name = filename;
 			hashObject[count].hash = currmd5;
+			hashObject[count].path = file;
 			if(!printToScreen){ // Toggle on/off "!" to print to screen
 				//process.stdout.write(count + '.' + filename + '\r'); //  print and number each file
 				process.stdout.write(count + '.' + filename + ' (MD5: ' + currmd5 + ') ' + '\r'); //  print and number each file
