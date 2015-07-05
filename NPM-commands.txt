@@ -19,6 +19,7 @@ After loading data:
  - Pass through routes to templates
  - Or, attach it to app.locals
 
+--save saves the dependency in package.json
 
 If loaded into app.locals, the objects in the data file will become global variables in app.locals 
 
